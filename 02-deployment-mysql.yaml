@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: mariadb
+  labels:
+    name: dpy-mariadb
+    type: backend
+spec:
+  replicas: 1
+  matchLabels:
+    app: mariadb
+  containers:
+    - image:  image
+    name:  my-name
+    env:
+      - name:  ENVVARNAME
+        value:  ENVVARVALUE

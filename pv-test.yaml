@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gluster-pv
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+  - ReadWriteMany
+  glusterfs:
+    endpoints: gluster-cluster
+    path: /kubepv
+    readOnly: false
+  persistentVolumeReclaimPolicy: Retain
